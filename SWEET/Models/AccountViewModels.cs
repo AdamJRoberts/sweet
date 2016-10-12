@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SWEET.Models
+namespace IdentitySample.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -20,7 +20,6 @@ namespace SWEET.Models
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
         public string ReturnUrl { get; set; }
-        public bool RememberMe { get; set; }
     }
 
     public class VerifyCodeViewModel
@@ -35,8 +34,6 @@ namespace SWEET.Models
 
         [Display(Name = "Remember this browser?")]
         public bool RememberBrowser { get; set; }
-
-        public bool RememberMe { get; set; }
     }
 
     public class ForgotViewModel
@@ -64,6 +61,9 @@ namespace SWEET.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -79,6 +79,31 @@ namespace SWEET.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        [Required]
+        [Display(Name = "First name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
+
+        public bool isAdmin { get; set; }
+
+        [Required]
+        [Display(Name = "Security Question 1")]
+        public string securityq1 { get; set; }
+
+        [Required]
+        [Display(Name = "Security Question 2")]
+        public string securityq2 { get; set; }
+
+        [Required]
+        [Display(Name = "Answer")]
+        public string security1 { get; set; }
+
+        [Required]
+        [Display(Name = "Answer")]
+        public string security2 { get; set; }
     }
 
     public class ResetPasswordViewModel
@@ -108,5 +133,20 @@ namespace SWEET.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        [Required]
+        [Display(Name = "Security Question 1")]
+        public string secure1 { get; set; }
+
+        [Required]
+        [Display(Name = "Security Question 2")]
+        public string secure2 { get; set; }
+
+        [Required]
+        [Display(Name = "Security Answer 1")]
+        public string answer1 { get; set; }
+
+        [Required]
+        [Display(Name = "Security Answer 2")]
+        public string answer2 { get; set; }
     }
 }

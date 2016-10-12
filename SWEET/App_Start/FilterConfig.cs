@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace SWEET
+namespace IdentitySample
 {
     public class FilterConfig
     {

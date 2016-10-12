@@ -1,8 +1,6 @@
-﻿using Microsoft.Owin;
-using Owin;
+﻿using Owin;
 
-[assembly: OwinStartupAttribute(typeof(SWEET.Startup))]
-namespace SWEET
+namespace IdentitySample
 {
     public partial class Startup
     {
